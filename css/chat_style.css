@@ -1,0 +1,50 @@
+body {
+
+
+background: #e6e6e6;
+direction: ltr;
+
+font-family: tahoma;
+
+font-size: 13px;
+
+
+}
+
+
+
+table {
+
+background: #ffffff;
+
+font-size: 13px;
+
+
+}
+
+.content {
+
+margin-left: 15px;
+
+color: #454545;
+font-family: arial;
+line-height:180%
+
+}
+
+A:link {
+color: #000;
+text-decoration:none;
+}
+
+
+A:active {
+color: #000;
+text-decoration:none;
+}
+
+
+A:visited {
+color: #000;
+text-decoration:none;
+}
