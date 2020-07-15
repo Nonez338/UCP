@@ -1,0 +1,29 @@
+
+<?php
+$openfolder = opendir('../uofusers/waiting-list');
+$files_num=0;
+
+while (false !== ($file = readdir($openfolder))) {
+	if ($file !== '.' && $file !== '..') {
+		$files_num++;
+	}
+}
+
+closedir($openfolder);
+$files_text = ($files_num > 0) ? $files_num : "0";
+?>
+
+<a href="index.php?act=user_add">Add user</a><br />
+<a href="index.php?act=user_edit">Edit user</a><br />
+<a href="index.php?act=user_info">User info</a><br />
+<?php
+if ($files_num > 0) echo "<a href=\"index.php?act=approving\">Users approving</a> ($files_text)<br />";
+else echo "Users approving ($files_text)<br />";
+?>
+<a href="index.php?act=ban_list">Ban list</a><br />
+<a href="index.php?act=ban_info">Ban info</a><br />
+<a href="index.php?act=unban">Unban</a><br />
+<a href="index.php?act=unbanip">Unban IP</a><br />
+<a href="index.php?act=money_list">Money list</a><br />
+<a href="index.php?act=mail">Mass mail</a><br />
+<a href="index.php?act=reports">Reports</a><br />

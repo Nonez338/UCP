@@ -1,0 +1,80 @@
+<?php
+include 'SampQueryAPI.php';
+$server = new SampQueryAPI('213.8.254.139','1777');
+$get_details = $server->getInfo();
+$players_height = 31 * $get_details['players'];
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<script>
+		function headerpop(url) {
+		newwindow=window.open(url,'name','height=<?= $players_height; ?>,width=350,scrollbars=1');
+		}
+		function msgpop(url) {
+		newwindow=window.open(url,'name','height=360,width=500,scrollbars=1');
+		}
+		function chatpop(url) {
+		newwindow=window.open(url,'name','height=330,width=460');
+		}
+		</script>
+		<META HTTP-EQUIV='Refresh' CONTENT='720; URL=<?=$_SERVER['PHP_SELF']?>'>
+		<meta name="alexaVerifyID" content="4IJyt-rg4EnNzDUXS9O6X8l66rs" />
+		<title>Infnity RolePlay - Vgames</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+<body>
+<div class="warp">
+<div class="bgsite">
+<div class="logo"></div>
+<div class="menu">
+<a href="index.php?a=index"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Home</div></a>
+</font>
+<?php
+if (isset($_COOKIE['TBCP'])) {
+?>
+<a href="index.php?a=profile"><div class="menu-text"  onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'"><font color='white'>Profile</font></div></a>
+<a href="index.php?a=control"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Control</div></a>
+<?php } else { ?>
+<a href="index.php?a=register"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'"><font color='white'>Register</font></div></a>
+<a href="index.php?a=login"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Login</div></a>
+<?php } ?>
+<a href="index.php?a=forum" target="_blank"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Forum</div></a>
+<a href="index.php?a=rules"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Rules</div></a>
+<a href="index.php?a=contact"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Contact</div></a>
+<?php
+if (isset($_COOKIE['TBCP'])) {
+?>
+<a href="?a=login&step=3"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'"><font color='white'>Disconnect</font></div></a>
+<?php }?>
+<div class="menu-details">
+<?php
+if (!$server->isOnline()) echo "Server Offline";
+else {
+$get_details = $server->getInfo();
+if ($get_details['players'] <= 100) {
+?>
+<a href="#" onclick=" return headerpop('players.php')">
+<?php
+}
+?>
+<font color='white'>
+Online Players: 
+<?php
+echo "<b>",$get_details['players'], " / ", $get_details['maxplayers'],"</b>";
+}
+?>
+</font></a>
+</div>
+</div>
+<br />
+<div class="content">
+<?php
+if (isset($page_explain[$a])) {
+echo "<fieldset title='Information' style='color:#000000'>";
+echo "<legend><font face='Aria' size='2'><b><span style='color:#000000'>Information</span></b></font></legend>";
+echo "<font face='Aria' size='2'>$page_explain[$a]</font>";
+echo "</fieldset><br />";
+}
+ ?>

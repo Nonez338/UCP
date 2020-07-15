@@ -1,0 +1,12 @@
+password=0
+email=0
+bornplace=0
+gender=0
+age=0
+
+que1=0
+que2=0
+que3=0
+que4=0
+tries=5
+reason=0

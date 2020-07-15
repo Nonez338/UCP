@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<script>
+		function compop(url) {
+		newwindow=window.open(url,'name','height=300,width=800');
+		}
+		</script>
+		
+		<title>Infinity RolePlay - Vgames | Admin Control Panel</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+	</head>
+<body>
+<div class="warp">
+<div class="bgsite">
+<div class="logo"><div class="adminmsgbox"><form method='POST' action='index.php?act=msgbox'><textarea name="msgbox" cols="50" rows="3" alt="Last Update: "><? include "msgbox.txt" ?></textarea><br /><center><input type="submit" value="Change"></center></form></div></div>
+
+<div class="menu">
+<a href="index.php?act=index"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'"><font color='white'>Home</font></div></a>
+<a href="index.php?act=users"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Users</div></a>
+<a href="index.php?act=factions"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Factions</div></a>
+<a href="index.php?act=records"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Records</div></a>
+<a href="index.php?act=msg"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Messages</div></a>
+<a href="index.php?act=statics"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Statics</div></a>
+<a href="index.php?act=logs"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Logs</div></a>
+<a href="index.php?act=login&step=3"><div class="menu-text" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight='normal'">Disconnect</div></a>
+</div>
+<br />
+<div class="content">
+<?php
+if (isset($page_explain[$act])) {
+echo "<fieldset title='Information' style='color:#000000'>";  
+echo "<legend><font face='Aria' size='2'><b><span style='color:#000000'>Information</span></b></font></legend>";
+echo "<font face='Aria' size='2'>$page_explain[$act]</font>";
+echo "</fieldset><br />";
+}
+ ?>

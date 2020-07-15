@@ -1,0 +1,9 @@
+<?php IsUserConnect(); ?>
+<u><b>Control your user</b></u><br />
+- <a href='index.php?a=changeemail'>Change email address</a><br />
+- <a href='index.php?a=changepass'>Change password</a><br />
+- <a href='index.php?a=AR'>Admin record</a><br />
+- <a href='index.php?a=admins'>Admins list</a><br />
+- <a href='index.php?a=lifestory'>Life story</a><br />
+- <a href='#'>Activities Calendar</a> (Soon)<br />
+- <a href='#'>Premium/V.I.P</a> (Soon)<br />
