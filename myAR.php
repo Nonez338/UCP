@@ -15,6 +15,6 @@ ftp_chdir($ftp_con,"server1/scriptfiles/NTRP/Logs/AR");
 		ftp_get($ftp_con,$tempfile,$file,FTP_ASCII);
 		$read = fread($handle,filesize($tempfile));
 		fclose($handle);
-		if ($read == '') print_error("You dont has a Admin Record");
+		if ($read == '') print_error("You don't have an Admin Record");
 		else echo "<textarea cols='100' rows='10' disabled>$read</textarea>";
 ?>
